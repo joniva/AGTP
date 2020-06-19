@@ -1,5 +1,3 @@
-
-```
 # AGTP
 AGTP is an automatic geomteric theorem prover.
 
