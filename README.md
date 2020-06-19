@@ -1,5 +1,5 @@
 # AGTP
-AGTP is an automatic geomteric theorem prover.
+AGTP is an automatic geomteric theorem prover...
 
 ## Dependencies
 ```
