@@ -34,26 +34,24 @@ def createShape():
         #It looks repetitive at first but by configuring the plots this way
         #we can control individually how we draw each function which simplifies things
 
+        line = input("Input function: ")
+        dom_s = float(input("dom_s: "))
+        dom_f = float(input("dom_f: "))
+        listFunction.append(line)
+        listDoms.append(dom_s)
+        listDomf.append(dom_f)
+
         if lineType == "linear":
-            line = input("Input function: ")
-            dom_f = float(input("dom_f: "))
             x = np.linspace(dom_s,dom_f,100)
             y = eval(line)
             plt.plot(x,y,linewidth=2.5,color="k")
-
         
         elif lineType == "const_y":
-            line = float(input("Input function: "))
-            dom_s = float(input("dom_s: "))
-            dom_f = float(input("dom_f: "))
             x = np.linspace(dom_s,dom_f,100)
             y = [line]*100 
             plt.plot(x,y,linewidth=2.5,color="k")
 
         elif lineType == "const_x":
-            line = float(input("Input function: "))
-            dom_s = float(input("dom_s: "))
-            dom_f = float(input("dom_f: "))
             y = np.linspace(dom_s,dom_f,100)
             x = [line]*100
             plt.plot(x,y,linewidth=2.5,color="k")
