@@ -10,7 +10,14 @@ plt.rcParams["toolbar"]="None"
 plt.axis("off")
 
 #Number of sides the shape has
-sides = 1
+sides = int(input("How many sides does the shape have: "))
+
+#Creating a list to store all of the functions so I can referer later on to
+#them in order to do different calculations
+
+listFunction = [None] * sides
+listDoms = [None] * sides
+listDomf = [None] * sides
 
 def createShape():
 
@@ -23,14 +30,17 @@ def createShape():
         #they are inputing, in the GUI it will be a drop down menu
 
         lineType = input("What type is the function(linear,const_y,const_x): ")
+        
+        #It looks repetitive at first but by configuring the plots this way
+        #we can control individually how we draw each function which simplifies things
 
         if lineType == "linear":
             line = input("Input function: ")
-            dom_s = float(input("dom_s: "))
             dom_f = float(input("dom_f: "))
             x = np.linspace(dom_s,dom_f,100)
             y = eval(line)
             plt.plot(x,y,linewidth=2.5,color="k")
+
         
         elif lineType == "const_y":
             line = float(input("Input function: "))
@@ -50,6 +60,7 @@ def createShape():
 
     plt.rcParams['toolbar'] = 'None'
     plt.show()
+
 
 createShape()
 
